@@ -1,5 +1,15 @@
+import DataInformation from "./DataInformation/DataInformation";
+
 function App() {
-  return <h1>Hello World!</h1>;
+  return (
+    <>
+      <div>
+        <h1>Web Stock Analyzer</h1>
+      </div>
+
+      <DataInformation />
+    </>
+  );
 }
 
 export default App;
