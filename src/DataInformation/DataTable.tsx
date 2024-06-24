@@ -1,4 +1,6 @@
-function DataTable() {
+import { IStockRow } from "./DataInformation.types";
+
+function DataTable({ stockInformation }: { stockInformation: IStockRow[] }) {
   return (
     <table>
       <thead>
@@ -12,13 +14,17 @@ function DataTable() {
       </thead>
 
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-        </tr>
+        {stockInformation.map((stockRow) => {
+          return (
+            <tr key={stockRow.date}>
+              <td>{stockRow.date}</td>
+              <td>{stockRow.open}</td>
+              <td>{stockRow.high}</td>
+              <td>{stockRow.low}</td>
+              <td>{stockRow.close}</td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
